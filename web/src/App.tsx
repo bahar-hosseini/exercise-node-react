@@ -1,7 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 
+//Internal Modules
+import logo from './logo.svg';
 import './App.css';
+import ItemList from './components/ItemList';
 
 export function App() {
   return (
@@ -19,6 +21,7 @@ export function App() {
         >
           Learn React
         </a>
+        <ItemList />
       </header>
     </div>
   );
