@@ -1,10 +1,10 @@
 //External Modules
 import { Router, Request, Response } from 'express';
 import axios from 'axios';
-import { stringify } from 'flatted';
+import { stringify, parse } from 'flatted';
 export const repos = Router();
 
-repos.get('/', async (_: Request, res: Response) => {
+repos.get('/', async (req, res) => {
   res.header('Cache-Control', 'no-store');
 
   res.status(200);
@@ -13,7 +13,8 @@ repos.get('/', async (_: Request, res: Response) => {
     const response = await axios.get(
       'https://api.github.com/users/silverorange/repos'
     );
-    res.send(stringify(response));
+    const result = response.data.filter((i) => i.fork === false);
+    res.json(stringify(result));
   } catch (err) {
     console.error(err);
   }
