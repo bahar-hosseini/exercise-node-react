@@ -6,6 +6,7 @@ export const repos = Router();
 
 repos.get('/', async (req, res) => {
   res.header('Cache-Control', 'no-store');
+  res.set('Content-Type', 'application/json');
 
   res.status(200);
   // TODO: See README.md Task (A). Return repo data here. You’ve got this!
