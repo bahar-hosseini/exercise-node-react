@@ -18,22 +18,22 @@ const ItemList = () => {
 
   const handleClick = (e) => {
     const filterdItem = items.filter((i) => i.language === e.target.value);
+
     setItems(filterdItem);
   };
 
   const eachItem = items.map((i, index) => {
     const { name, language, description, forks_count } = i;
     return (
-      <>
+      <div key={index}>
         <RepositoryItem
-          key={index}
           name={name}
           language={language}
           description={description}
           forksCount={forks_count}
         />
         <Button language={language} click={handleClick} />
-      </>
+      </div>
     );
   });
   return <div>{eachItem}</div>;
