@@ -1,0 +1,12 @@
+.container{
+  background-color: rgb(183, 220, 216);
+  width: 50%px;
+  height: auto;
+  font-size: 2rem;
+}
+.repoContainer{
+ cursor: pointer;
+}
+.repoContainer >p{
+  color: rgb(14, 14, 66);
+}
